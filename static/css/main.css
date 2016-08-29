@@ -16,3 +16,17 @@ body{
     box-sizing: border-box;
 
 }
+
+.page-list{
+
+    text-align: center;
+}
+
+.page-list li{
+
+    display: inline-block;
+    list-style: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}

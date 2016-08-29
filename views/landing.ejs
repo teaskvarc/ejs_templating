@@ -28,8 +28,16 @@
         </div>
         <hr/>
     </div>
-
     <% } %>
+
+    <ul class="page-list">
+        <% for(var i=0; i<numPages; i++ ){ %>
+        <li>
+            <a href="?page=<%- i %>"><%- i %></a>
+        </li>
+
+        <% } %>
+    </ul>
 
 
     <script src="/static/js/main.js"></script>

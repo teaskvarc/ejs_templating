@@ -37,7 +37,10 @@ app.get('/', (req, res)=>{
          // zacnemo pri 0 in jih vzamemo 5 ven
          var page = jsonData.splice(pageNum*postCount, 5);
 
-         res.render('landing', {posts: page});
+         //koliko strani imamo po 5 posts
+         var pageLength = Math.floor(jsonData.length/5);
+
+         res.render('landing', {posts: page, numPages: pageLength});
       }
    });
 
