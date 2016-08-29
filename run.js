@@ -33,14 +33,22 @@ app.get('/', (req, res)=>{
          //da se nam prikaze samo prvih pet clankov
          //var page = jsonData.splice(0,5);
 
+         //koliko strani imamo po 5 posts
+         //najprej preberemo dolzino, potem sledi splice
+         var pageLength = Math.ceil(jsonData.length/5);
+
          // 0 * 5 = smo na 0 strani, in vzame 5 posts.
          // zacnemo pri 0 in jih vzamemo 5 ven
          var page = jsonData.splice(pageNum*postCount, 5);
 
-         //koliko strani imamo po 5 posts
-         var pageLength = Math.floor(jsonData.length/5);
 
-         res.render('landing', {posts: page, numPages: pageLength});
+
+         res.render('landing', {
+            posts    : page,
+            numPages : pageLength,
+            pageNum  :pageNum
+
+         });
       }
    });
 
