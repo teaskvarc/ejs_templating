@@ -1,10 +1,12 @@
 <!DOCTYPE>
 <html>
 <head>
-
     <link rel="stylesheet" href="/static/css/main.css">
     <script src="/libs/jquery/dist/jquery.min.js"></script>
 
+    <script>
+        var pageNum = <%- pageNum+1 %>
+    </script>
 </head>
 <body>
 
@@ -15,7 +17,7 @@
     <% for(var i=0; i<posts.length; i++){ %>
 
     <div class="post-container">
-        <div class="post-title"> <%- posts[i].title %> </div>
+        <div class="post-title"> <%- posts[i].title %> / <%- posts[i].id %> </div>
         <br/>
         <div class="post-content"> <%- posts[i].body %> </div>
         <br/>

@@ -38,7 +38,7 @@ app.get('/article/:id', (req, res)=>{
 
 
 // route, da pridobimo podatke za endless scroll
-app.get('/api/get', (req, res)=>{
+app.get('/api/posts', (req, res)=>{
 
    var pageNum = req.query.page-1;
    var postCount = req.query.postCount ? req.query.postCount :5;
