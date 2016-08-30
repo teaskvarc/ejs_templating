@@ -15,27 +15,27 @@
     <% for(var i=0; i<posts.length; i++){ %>
 
     <div class="post-container">
-        <div class="post-title">
-
-            <%- posts[i].title %>
-
-        </div>
+        <div class="post-title"> <%- posts[i].title %> </div>
         <br/>
-        <div class="post-content">
-
-            <%- posts[i].body %>
-
-        </div>
+        <div class="post-content"> <%- posts[i].body %> </div>
+        <br/>
+        <a href="/article/<%- posts[i].id %>">Read more ...</a>
         <hr/>
     </div>
+
     <% } %>
 
     <ul class="page-list">
         <% for(var i=0; i<numPages; i++ ){ %>
         <li>
-            <% if(pageNum !== i){ %>
+            <% if(pageNum !== i-1){ %>
+
+            <!-- Page link-->
             <a href="?page=<%- i %>"><%- i %></a>
+
             <% }else{ %>
+
+            <!-- Current page -->
             <p><%- i %></p>
             <%}%>
         </li>
