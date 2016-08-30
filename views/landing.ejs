@@ -26,12 +26,16 @@
     <% } %>
 
     <ul class="page-list">
+
+        <!-- Previous page-->
+        <a href="?page=<%- pageNum %>&postCount=<%- postCount %>">Previous</a>
+
         <% for(var i=0; i<numPages; i++ ){ %>
         <li>
             <% if(pageNum !== i-1){ %>
 
             <!-- Page link-->
-            <a href="?page=<%- i %>"><%- i %></a>
+            <a href="?page=<%- i %>&postCount=<%- postCount %>"><%- i %></a>
 
             <% }else{ %>
 
@@ -40,6 +44,8 @@
             <%}%>
         </li>
         <% } %>
+        <!-- Next page -->
+        <a href="?page=<%- pageNum+2 %>&postCount=<%- postCount %>">Next</a>
     </ul>
 
 
