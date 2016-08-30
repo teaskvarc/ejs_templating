@@ -50,7 +50,11 @@ app.get('/', (req, res)=>{
 
    // 1 - 1 = 0, tako da zacnemo na 0 strani
    var pageNum = req.query.page-1;
-   var postCount = 5;
+   
+   //var postCount = req.query.postCount;
+
+   //prvo je pogoj, v kolikor to obstaja bo vzelo prvo vrednost, do :, ce ne obstaja bo druga vrednost (10) default
+   var postCount = req.query.postCount ? req.query.postCount :5;
 
    request('http://jsonplaceholder.typicode.com/posts', function (error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -64,11 +68,11 @@ app.get('/', (req, res)=>{
 
          //koliko strani imamo po 5 posts
          //najprej preberemo dolzino, potem sledi splice
-         var pageLength = Math.ceil(jsonData.length/5);
+         var pageLength = Math.ceil(jsonData.length/postCount);
 
          // 0 * 5 = smo na 0 strani, in vzame 5 posts.
          // zacnemo pri 0 in jih vzamemo 5 ven
-         var page = jsonData.splice(pageNum * postCount, 5);
+         var page = jsonData.splice(pageNum * postCount, postCount);
 
          res.render('landing', {
             posts    :page,
