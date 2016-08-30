@@ -1,5 +1,4 @@
 <!DOCTYPE>
-
 <html>
 <head>
 
@@ -10,6 +9,7 @@
 <body>
 
     <h1>Posts</h1>
+    <p>Page: <%- pageNum+1 %></p>
 
 
     <% for(var i=0; i<posts.length; i++){ %>
@@ -33,9 +33,12 @@
     <ul class="page-list">
         <% for(var i=0; i<numPages; i++ ){ %>
         <li>
+            <% if(pageNum !== i){ %>
             <a href="?page=<%- i %>"><%- i %></a>
+            <% }else{ %>
+            <p><%- i %></p>
+            <%}%>
         </li>
-
         <% } %>
     </ul>
 
