@@ -19,6 +19,8 @@
         <br/>
         <div class="post-content"> <%- posts[i].body %> </div>
         <br/>
+
+        <!-- Link to single article -->
         <a href="/article/<%- posts[i].id %>">Read more ...</a>
         <hr/>
     </div>
@@ -27,7 +29,7 @@
 
     <ul class="page-list">
 
-        <!-- Previous page-->
+        <!-- Previous page button-->
         <a href="?page=<%- pageNum %>&postCount=<%- postCount %>">Previous</a>
 
         <% for(var i=0; i<numPages; i++ ){ %>
@@ -39,12 +41,13 @@
 
             <% }else{ %>
 
-            <!-- Current page -->
+            <!-- Current page button -->
             <p><%- i %></p>
             <%}%>
         </li>
         <% } %>
-        <!-- Next page -->
+
+        <!-- Next page button -->
         <a href="?page=<%- pageNum+2 %>&postCount=<%- postCount %>">Next</a>
     </ul>
 

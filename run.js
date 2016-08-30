@@ -2,6 +2,7 @@ const express = require('express');
 const app     = express();
 const request = require('request');
 
+   //ne rabimo mapo: views nikjer polinkat, ker s tem dolocimo, da so template avtomatsko v mapi views! po defaultu!
 app.set('view engine', 'ejs');
 
 app.use('/libs', express.static('libs'));
@@ -34,6 +35,28 @@ app.get('/article/:id', (req, res)=>{
 
 });
 
+
+
+// route, da pridobimo podatke za endless scroll
+app.get('/api/get', (req, res)=>{
+
+   var pageNum = req.query.page-1;
+   var postCount = req.query.postCount ? req.query.postCount :5;
+
+   request('http://jsonplaceholder.typicode.com/posts', function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+         console.log(body);
+
+         var jsonData = JSON.parse(body);
+         var pageLength = Math.ceil(jsonData.length / postCount);
+         var page = jsonData.splice(pageNum * postCount, postCount);
+
+         // nazaj dobimo array vseh posts, ki jih potrebujemo zrisali
+         res.send(page);
+
+      }
+   });
+});
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
