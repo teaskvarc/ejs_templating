@@ -5,6 +5,11 @@
 
 // ko je aplikacija enkrat nalozena, potem ko dobimo cel HTML v browser, prevzame
 // kakrsnokoli interaktivnost ta JavaScript
+// pred tem se vse dogaja v run.js (oziroma karkoli pisemo v NODE.js)
+
+//main.js omogoca moznost interakcije in uporabnikom in stranjo
+// iz main.js posiljamo requeste (ob kliku na nekaj, ob scroll-u)
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -34,12 +39,14 @@ $('body').on('mousewheel', function () {
 
             console.log(res);
             isLoading = false;
+            $('.load-indicator').fadeOut();
 
             renderPosts(res);
 
         });
 
         isLoading = true;
+        $('.load-indicator').hide().fadeIn();
         
     };
 });
@@ -68,7 +75,7 @@ function renderPosts(posts){
         //tukaj v container vstavimo vse 3 spremenljivke
         //zaporednje je pomembno, ker se po tem zaporednju vstavijo v HTML
 
-        $postContainer.append($postTitle, $postContent, $br , $postLink, $hr);
+        $postContainer.append($postTitle, $postContent, $br , $postLink, $hr); 
 
             //postContainer vstavimo v posts-container
         $('.posts-container').append($postContainer);

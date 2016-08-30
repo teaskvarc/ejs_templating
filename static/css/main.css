@@ -45,3 +45,10 @@ a:visited{
     color: green;
 
 }
+
+.load-indicator{
+
+    text-align: center;
+    display: none;          /* ni prikazan potem pa v main.js dolocimo, da se prikaze */
+
+}

@@ -5,6 +5,7 @@
     <script src="/libs/jquery/dist/jquery.min.js"></script>
 
     <script>
+        // ta variable nam v browserju sporoci na kateri strani smo trenutno
         var pageNum = <%- pageNum+1 %>
     </script>
 </head>
@@ -30,6 +31,14 @@
 
         <% } %>
     </div>
+
+
+    <!-- Loading -->
+    <div class="load-indicator">
+        <p>Loading ...</p>
+    </div>
+
+
 
     <ul class="page-list">
 
