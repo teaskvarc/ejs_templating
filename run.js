@@ -104,9 +104,31 @@ app.get('/', (req, res)=>{
             posts     :page,
             numPages  :pageLength,
             pageNum   :pageNum,
-            postCount :postCount
+            postCount :postCount,
+            pageName  :'articles'         // podatke, da ve kateri gumb mora obarvati
 
          });
       }
+   });
+});
+
+//////////////////////////////////////////////////////////////////////////////////
+
+app.get('/about', (req, res) =>{
+
+   res.render('about', {
+
+      pageName:'about'
+
+
+   });
+});
+
+app.get('/portfolio', (req, res)=>{
+
+   res.render('portfolio', {
+
+      pageName: 'portfolio'
+
    });
 });

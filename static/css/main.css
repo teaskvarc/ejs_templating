@@ -17,12 +17,10 @@ body{
 }
 
 .page-list{
-
     text-align: center;
 }
 
 .page-list li{
-
     display: inline-block;
     list-style: none;
     font-weight: bold;
@@ -36,19 +34,38 @@ a{
 }
 
 a:hover{
-
     font-weight: bold;
 }
 
 a:visited{
-
     color: green;
-
 }
 
 .load-indicator{
-
     text-align: center;
     display: none;          /* ni prikazan potem pa v main.js dolocimo, da se prikaze */
+}
 
+.nav-container{
+
+    font-size: 0;         /* glej v zvezek zakaj sem to dala, <div>, enter = presledek*/
+    text-align: center;
+}
+
+.nav-container .nav-button{
+
+    font-size: 16px;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #13756D;
+    color: #ffffff;
+    margin: 5px;
+
+}
+
+.nav-container .selected{
+
+    background-color: #0a9dc7;
+    border-bottom: 2px solid #13756D;
 }
