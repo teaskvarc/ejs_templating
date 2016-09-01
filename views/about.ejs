@@ -34,10 +34,58 @@
         </p>
 </div>
 
+<!-- ce bi delali website, ki nima nobenega javascripta je to nacin kako narediti post request-->
+<!-- naceloma ta taksne akcije, kot sem tukaj dala form action=''/postHire' ... NE DELAM0! -->
+
+
 <div class="cta-container">
     <div class="cta-button">Hire me!</div>
-</div>
+    <br/>
+    <div class="form-container">
 
+        <!--ce imamo route /postHire bo prejel podatke iz URL-ja -->
+        <!-- button submit na dnu, ker je znoraj form: sprozi to akcijo -->
+        <form action="/postHire" method="post">
+
+                <div class="form-block">
+                    <div class="label-container">
+                        <label>Email</label>
+                    </div>
+                    <input class="form-element" name="email" type="email" required />
+                </div>
+
+                <div class="form-block">
+                    <div class="label-container">
+                        <label>Company</label>
+                    </div>
+                    <input class="form-element" name="company" type="text" required />
+                </div>
+
+                <div class="form-block">
+                    <div class="label-container">
+                        <label>Website</label>
+                    </div>
+                    <input id="website" name="website" class="form-element" type="url" />
+                </div>
+
+                <div class="form-block">
+                    <div class="label-container">
+                        <label>Job description</label>
+                    </div>
+                    <textarea class="form-element" name="jobDescription" required ></textarea>
+                </div>
+
+                <div class="form-block">
+                    <div class="label-container">
+                        <label>Budget</label>
+                    </div>
+                   <input class="form-element" name="budget" type="number" required>
+                </div>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+    </div>
+</div>
 
 
 <%- include footer.ejs %>

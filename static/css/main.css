@@ -108,6 +108,7 @@ a:visited{
 .cta-container{
 
     text-align: center;         /* da je gumc hire me na sredini*/
+    margin-top: 20px;
 }
 
 .cta-button{
@@ -124,5 +125,40 @@ a:visited{
     width: 200px;
 }
 
+.form-block{
 
+    margin: 10px;
+}
+
+.form-element{
+
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 100;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.label-container{
+
+    width: 150px;
+    display: inline-block;
+
+}
+
+.submit-button{
+
+    font-family: sans-serif;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #00a65a;
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100px;
+
+
+}
 
