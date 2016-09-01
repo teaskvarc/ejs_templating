@@ -1,6 +1,13 @@
 body{
     font-family: sans-serif;
+    margin: 0;
 }
+
+.title-container{
+
+    text-align: center;
+}
+
 
 .post-title{
 
@@ -58,7 +65,7 @@ a:visited{
     display: inline-block;
     padding: 10px;
     border-radius: 4px;
-    background-color: #13756D;
+    background-color: #00a65a;
     color: #ffffff;
     margin: 5px;
 
@@ -69,3 +76,53 @@ a:visited{
     background-color: #0a9dc7;
     border-bottom: 2px solid #13756D;
 }
+
+.footer-container{
+
+    width: 100%;
+    height: 100px;
+    background-color: #00a7d0;
+
+}
+
+.text-about{
+
+    overflow: auto;
+ }
+
+.text-about, .p{
+
+    font-size: 18px;
+
+}
+
+.avatar-image{
+
+    width: 200px;
+    height: 240px;
+    background: #eee;
+    float: left;
+    margin: 10px;
+}
+
+.cta-container{
+
+    text-align: center;         /* da je gumc hire me na sredini*/
+}
+
+.cta-button{
+
+    font-family: sans-serif;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #00a65a;
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+
+

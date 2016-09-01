@@ -29,7 +29,12 @@ app.get('/article/:id', (req, res)=>{
       var jsonData = JSON.parse(body);
 
       //povemo kateri ejs rendramo, kot drugi parameter posljemo podatke
-      res.render('article', {article:jsonData});
+      res.render('article', {
+         article     :jsonData,
+         pageName    :'article'
+
+
+      });
 
    });
 
