@@ -40,8 +40,9 @@ $('.submit-button').on('click', ()=>{
     // drugi parameter so podatki
     // tretji parameter je callback iz streznika, da vem, da sem uspesno poslala formo
 
-    $.post('/hire', data , function (res) {
+    $.post('/api/hire', data , function (res, statusString, responseData) {
 
+        console.log(status, responseData.status);
 
     });
 

@@ -140,10 +140,12 @@ app.get('/portfolio', (req, res)=>{
 
 
 // tukaj ujamemo req, ki pride iz browser-ja
-app.post('/hire', (req, res)=>{
+app.post('/api/hire', (req, res)=>{
 
    var data = req.body;
    
    console.log(data);
+
+   res.sendStatus(200);
 
 });
