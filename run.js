@@ -1,9 +1,13 @@
 const express = require('express');
 const app     = express();
 const request = require('request');
+const bodyParser = require('body-parser');
 
    //ne rabimo mapo: views nikjer polinkat, ker s tem dolocimo, da so template avtomatsko v mapi views! po defaultu!
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/libs', express.static('libs'));
 app.use('/static', express.static('static'));
@@ -33,11 +37,8 @@ app.get('/article/:id', (req, res)=>{
          article     :jsonData,
          pageName    :'article'
 
-
       });
-
    });
-
 });
 
 
@@ -125,7 +126,6 @@ app.get('/about', (req, res) =>{
 
       pageName:'about'
 
-
    });
 });
 
@@ -136,4 +136,14 @@ app.get('/portfolio', (req, res)=>{
       pageName: 'portfolio'
 
    });
+});
+
+
+// tukaj ujamemo req, ki pride iz browser-ja
+app.post('/hire', (req, res)=>{
+
+   var data = req.body;
+   
+   console.log(data);
+
 });

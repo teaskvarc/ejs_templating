@@ -5,91 +5,94 @@
 
 <body>
 
-<% include navigation.ejs %>
-<div class="title-container">
 
-    <h1>About</h1>
-    <h2>Tea</h2>
+        <% include navigation.ejs %>
+        <div class="title-container">
 
-</div>
+            <h1>About</h1>
+            <h2>Tea</h2>
 
-<div class="text-about">
+        </div>
 
-        <p>
+        <div class="text-about">
 
-             <div class="avatar-image"></div>
+                <p>
 
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.<br/> It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-            of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. <br/It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-            of Lorem Ipsum.
+                     <div class="avatar-image"></div>
 
-        </p>
-</div>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged.<br/> It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+                    of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. <br/It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+                    of Lorem Ipsum.
 
-<!-- ce bi delali website, ki nima nobenega javascripta je to nacin kako narediti post request-->
-<!-- naceloma ta taksne akcije, kot sem tukaj dala form action=''/postHire' ... NE DELAM0! -->
+                </p>
+        </div>
 
-
-<div class="cta-container">
-    <div class="cta-button">Hire me!</div>
-    <br/>
-    <div class="form-container">
-
-        <!--ce imamo route /postHire bo prejel podatke iz URL-ja -->
-        <!-- button submit na dnu, ker je znoraj form: sprozi to akcijo -->
-        <form action="/postHire" method="post">
-
-                <div class="form-block">
-                    <div class="label-container">
-                        <label>Email</label>
-                    </div>
-                    <input class="form-element" name="email" type="email" required />
-                </div>
-
-                <div class="form-block">
-                    <div class="label-container">
-                        <label>Company</label>
-                    </div>
-                    <input class="form-element" name="company" type="text" required />
-                </div>
-
-                <div class="form-block">
-                    <div class="label-container">
-                        <label>Website</label>
-                    </div>
-                    <input id="website" name="website" class="form-element" type="url" />
-                </div>
-
-                <div class="form-block">
-                    <div class="label-container">
-                        <label>Job description</label>
-                    </div>
-                    <textarea class="form-element" name="jobDescription" required ></textarea>
-                </div>
-
-                <div class="form-block">
-                    <div class="label-container">
-                        <label>Budget</label>
-                    </div>
-                   <input class="form-element" name="budget" type="number" required>
-                </div>
-
-                <button type="submit" class="submit-button">Submit</button>
-            </form>
-    </div>
-</div>
+        <!-- ce bi delali website, ki nima nobenega javascripta je to nacin kako narediti post request-->
+        <!-- naceloma ta taksne akcije, kot sem tukaj dala form action=''/postHire' ... NE DELAM0! -->
 
 
-<%- include footer.ejs %>
+        <div class="cta-container">
+            <div class="cta-button">Hire me!</div>
+            <br/>
+            <div class="form-container">
+
+                <!--ce imamo route /postHire bo prejel podatke iz URL-ja -->
+                <!-- button submit na dnu, ker je znoraj form: sprozi to akcijo -->
+
+                <!-- <form action="/postHire" method="post"> -->
+
+                    <form>
+                        <div class="form-block">
+                            <div class="label-container">
+                                <label>Email</label>
+                            </div>
+                            <input class="form-element" id="email" name="email" type="email" required />
+                        </div>
+
+                        <div class="form-block">
+                            <div class="label-container">
+                                <label>Company</label>
+                            </div>
+                            <input class="form-element" id="company" name="company" type="text" required />
+                        </div>
+
+                        <div class="form-block">
+                            <div class="label-container">
+                                <label>Website</label>
+                            </div>
+                            <input id="website" name="website" id="website" class="form-element" type="url" />
+                        </div>
+
+                        <div class="form-block">
+                            <div class="label-container">
+                                <label>Job description</label>
+                            </div>
+                            <textarea class="form-element" id="jobDescription" name="jobDescription" required ></textarea>
+                        </div>
+
+                        <div class="form-block">
+                            <div class="label-container">
+                                <label>Budget</label>
+                            </div>
+                           <input class="form-element" id="budget" name="budget" type="number" required>
+                        </div>
+                    </form>
+
+                    <div type="submit" class="submit-button">Submit</div>
+            </div>
+        </div>
+
+        <%- include footer.ejs %>
+
+<script src="/static/js/about.js"></script>
 
 </body>
-
 </html>
