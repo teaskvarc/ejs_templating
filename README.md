@@ -8,13 +8,6 @@
 
 `$ bower install`
 
-### Requirements
-
-Running MongoDB in the background
-
-`$ mongod`
-
-
 ### Running
 
 `$ node run`
